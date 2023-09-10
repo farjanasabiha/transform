@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.container{
+    width: 1400px;
+    margin: 0px auto;
+}
+.hero{
+    text-align: center;
+}
+h1{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+    font-family: serif;
+    text-align: center;
+    margin: 300px auto;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+h1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+h1:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+nav{
+    padding: 15px 0px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu .myBtn{
+    color: #fff;
+    font-size: 25px;
+}
+.logo p{
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transition: all 0.3s ease;
+    transform-origin: left;
+    overflow: hidden;
+
+}
+.menu ul li{
+    list-style-type: none;
+    padding-bottom: 5px;
+    position: relative;
+}
+.menu ul li::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+.menu ul li:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    cursor: pointer;
+}
+.menu ul li a{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.btn button{
+    color: #fff;
+    font-size: 14px;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    cursor: pointer;
+    position: relative;
+    z-index: 99999999;
+}
+.btn button::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #743636;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    transform: scalex(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+    z-index: -9999;
+}
+.btn button:hover::before{
+    transform:scaleX(1) ;
+    transform-origin: left;
+}
+
+.active{
+    transform: scaleX(1) !important;
+}
+.myBtn{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .container{
+        width: 600px;
+    }
+    .menu ul{
+        position: absolute;
+        position: fixed;
+        flex-direction: column;
+        height: 100%;
+        width: 200px;
+        top: 0;
+        left: 0;
+        background-color: #743636;
+        padding: 30px 0px;
+        transform: scaleX(0);
+        z-index: 99999999999999999;
+    }
+    .myBtn{
+        display: block;
+    }
+}
